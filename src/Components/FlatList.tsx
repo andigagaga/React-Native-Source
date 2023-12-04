@@ -2,8 +2,13 @@ import { View, Text, StyleSheet, FlatList } from "react-native";
 import React from "react";
 import { Feather } from '@expo/vector-icons';
 
+export type HalloData = {
+  id: number
+  title: string
+  date: string
+}
 
-const DATA = [
+const DATA : HalloData[] = [
     {
         id: 1,
         title: "hallo1",
@@ -21,7 +26,7 @@ const DATA = [
     },
 ]
 
-const Home = () => {
+const FlatListItem = () => {
   return (
     <View style={style.container}>
       <View style={style.container_1}>
@@ -67,4 +72,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default Home;
+export default FlatListItem;

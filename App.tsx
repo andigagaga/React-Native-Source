@@ -2,12 +2,12 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
 // components
-import Home from './src/Components/Home'
+import FlatListItem from './src/Components/FlatList'
 
 const App = () => {
   return (
     <View style={style.container}>
-      <Home/>
+      <FlatListItem/>
     </View>
   )
 }
