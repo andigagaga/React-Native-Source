@@ -1,6 +1,8 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import React from "react";
 import { Feather } from '@expo/vector-icons';
+
+import DATA from "../dummyData/Data";
 
 export type HalloData = {
   id: number
@@ -8,30 +10,16 @@ export type HalloData = {
   date: string
 }
 
-const DATA : HalloData[] = [
-    {
-        id: 1,
-        title: "hallo1",
-        date: "01-08-2003"
-    },
-    {
-        id: 2,
-        title: "hallo2",
-        date: "01-08-2004"
-    },
-    {
-        id: 3,
-        title: "hallo3",
-        date: "01-08-2005"
-    },
-]
-
-const FlatListItem = () => {
+const FlatListItem = (props: {data: HalloData[]}) => {
   return (
-    <View style={style.container}>
+    <View style={{flex: 1}}>
       <View style={style.container_1}>
-      <FlatList 
-      data={DATA}
+      <Image
+        source={require("../../assets/StartGame.png")}
+        style={{ width: 200, height: 200 }}
+      />
+      <FlatList
+      data={props.data}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({item}) => (
         <View style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 100}}>
@@ -52,7 +40,7 @@ const FlatListItem = () => {
 
 const style = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   container_1: {
     backgroundColor: "pink",
