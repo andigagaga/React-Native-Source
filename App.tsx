@@ -1,15 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import DATA from "./src/dummyData/Data";
+import { NavigationContainer } from "@react-navigation/native";
 
 // components
-import FlatListItem from "./src/Screens/FlatList";
+import AppNavigation from "./Navigation/AppNavigation";
 
 const App = () => {
   return (
-    <View style={style.container}>
-      <FlatListItem data={DATA} />
-    </View>
+    <NavigationContainer>
+      <AppNavigation/>
+    </NavigationContainer>
   );
 };
 

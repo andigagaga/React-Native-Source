@@ -10,7 +10,11 @@ export type HalloData = {
   date: string
 }
 
-const FlatListItem = (props: {data: HalloData[]}) => {
+interface FlatListItemProps {
+  data: HalloData[];
+}
+
+const FlatListItem: React.FC<FlatListItemProps> = ({data})  => {
   return (
     <View style={{flex: 1}}>
       <View style={style.container_1}>
@@ -19,7 +23,7 @@ const FlatListItem = (props: {data: HalloData[]}) => {
         style={{ width: 200, height: 200 }}
       />
       <FlatList
-      data={props.data}
+      data={data}
       keyExtractor={(item) => item.id.toString()}
       renderItem={({item}) => (
         <View style={{display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 100}}>
