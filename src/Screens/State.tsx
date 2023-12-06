@@ -10,6 +10,12 @@ import React, { useState } from "react";
 const State = () => {
   const [count, setCount] = useState(0);
 
+  const [nama, setNama] = useState("apa aja deh");
+
+  const handleSubmit = () => {
+    setNama("asep")
+  }
+
   return (
     <SafeAreaView
       style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
@@ -40,6 +46,18 @@ const State = () => {
             onPress={() => setCount(count + 1)}
           >
             <Text>Add +</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View style={{marginTop: 50}}>
+        <Text>
+          {nama}
+        </Text>
+        <View>
+          <TouchableOpacity onPress={handleSubmit} style={{backgroundColor: 'green', padding:5, }}>
+            <Text style={{color: 'white', fontSize: 20, fontWeight: 'bold'}}>
+              Ganti Nama
+            </Text>
           </TouchableOpacity>
         </View>
       </View>

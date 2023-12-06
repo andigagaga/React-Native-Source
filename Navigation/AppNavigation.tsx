@@ -8,7 +8,13 @@ import State from '../src/Screens/State';
 
 
 import DATA from '../src/dummyData/Data';
+
+// Icon
 import { Feather } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+
+import fetchApi from '../src/Screens/fetchApi';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,17 +37,20 @@ const AppNavigation = () => {
     }
    }}
    >
-    <Tab.Screen name='City' component={City} options={{
+    {/* <Tab.Screen name='City' component={City} options={{
       tabBarIcon: ({ focused }) => <Feather name={'home'} size={20} color={focused ? 'tomato' : 'black'}/>
     }}/>
     <Tab.Screen name='FlatListItem' options={{
       tabBarIcon: ({focused}) => <Feather name='activity' size={20} color={focused ? 'tomato' : 'black'}/>
     }}>
       {() => <FlatListItem data={DATA}/>}
-    </Tab.Screen>
-    <Tab.Screen name='State' component={State} options={{
+    </Tab.Screen> */}
+    {/* <Tab.Screen name='State' component={State} options={{
       tabBarIcon: ({focused}) => <Feather name='settings' size={20} color={focused ? 'tomato' : 'black'}/>
-    }}/>
+    }}/> */}
+    <Tab.Screen name='fetchApi' component={fetchApi} options={{
+      tabBarIcon: ({focused}) => <MaterialCommunityIcons name="api" size={24} color={focused ? 'tomato' : 'black'} />
+    }} />
    </Tab.Navigator>
   )
 }
